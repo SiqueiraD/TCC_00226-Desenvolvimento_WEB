@@ -9,7 +9,7 @@
 
         <div class="container mt-2">
 
-            <jsp:include page="Titulo.jsp" />
+            <jsp:include page="MenuNavbar.html" />
 
             <h4>Login</h4> 
             <div class="col-6 mt-5">

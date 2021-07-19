@@ -7,7 +7,7 @@
     <body>
         <div class="container mt-2">
             
-            <%@include file="Titulo.jsp" %>           
+            <%@include file="MenuNavbar.html" %>           
             <h4>Resposta</h4>
         <%
             Cookie[] cookies = request.getCookies();

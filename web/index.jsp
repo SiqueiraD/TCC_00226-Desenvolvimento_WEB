@@ -7,7 +7,7 @@
     <body>
         <div class="container mt-2">
             
-            <%@include file="Titulo.jsp" %>
+            <%@include file="MenuNavbar.html" %>
 
             <a href="LoginForm.jsp">Login</a>
              
