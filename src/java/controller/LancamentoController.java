@@ -23,6 +23,9 @@ public class LancamentoController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        request.setAttribute("nomeUsuario", "Leo Cruz"); 
+        request.setAttribute("contaLancamento", "12303-7"); 
         RequestDispatcher rd = request.getRequestDispatcher("Lancamento.jsp");
         rd.forward(request, response);
     }

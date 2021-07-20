@@ -27,13 +27,24 @@
 
                     <input type="hidden" name="id" >
 
+                    
                     <div class="form-group">
-                        <label for="login">Login</label>
-                        <input type="text" class="form-control" name="login" required size="30" maxlength="100" placeholder="Seu Login">
+                        <label for="usuario">Usuario</label>
+                        <input type="text" class="form-control" name="usuario" required size="30" maxlength="100" disabled="disabled" value="<% out.println(request.getAttribute("nomeUsuario")); %>">
+                    </div>
+                    
+                    <p></p>
+                    <div class="form-group">
+                        <label for="banco">Banco</label>
+                        <input type="text" class="form-control" name="banco" required size="30" maxlength="100" placeholder="Seu Banco">
                     </div>
                     <div class="form-group">
-                        <label for="senha">Senha</label>
-                        <input type="password" class="form-control"  name="senha" required size="3" maxlength="3" placeholder="Sua Senha">
+                        <label for="agencia">Agencia</label>
+                        <input type="text" class="form-control" name="agencia" required size="30" maxlength="100" placeholder="Agencia da sua conta">
+                    </div>
+                    <div class="form-group">
+                        <label for="conta">Conta</label>
+                        <input type="text" class="form-control" name="conta" required size="30" maxlength="100" placeholder="Conta com dígito">
                     </div>
                     <button type="submit" class="btn btn-primary">Enviar</button>
                 </form>

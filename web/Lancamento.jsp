@@ -28,12 +28,39 @@
                     <input type="hidden" name="id" >
 
                     <div class="form-group">
-                        <label for="login">Login</label>
-                        <input type="text" class="form-control" name="login" required size="30" maxlength="100" placeholder="Seu Login">
+                        <label for="usuario">Usuario</label>
+                        <input type="text" class="form-control" name="usuario" required size="30" maxlength="100" disabled="disabled" value=    "<% out.println(request.getAttribute("nomeUsuario")); %>">
                     </div>
                     <div class="form-group">
-                        <label for="senha">Senha</label>
-                        <input type="password" class="form-control"  name="senha" required size="3" maxlength="3" placeholder="Sua Senha">
+                        <label for="conta">Conta</label>
+                        <input type="text" class="form-control" name="conta" required size="30" maxlength="100" disabled="disabled" value="<% out.println(request.getAttribute("contaLancamento")); %>">
+                    </div>
+                    <div class="form-group">
+                        <label for="operacao">Operação</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="operacao" id="operacao1">
+                            <label class="form-check-label" for="operacao1">
+                              Crédito
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="operacao" id="operacao2" checked>
+                            <label class="form-check-label" for="operacao2">
+                              Débito
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="data">Data</label>
+                        <input type="date" class="form-control" name="data" required size="30" maxlength="100" placeholder="Data do Lançamento">
+                    </div>
+                    <div class="form-group">
+                        <label for="valor">Valor</label>
+                        <input type="text" class="form-control" name="valor" required size="30" maxlength="100" placeholder="Valor do Lançamento">
+                    </div>
+                    <div class="form-group">
+                        <label for="descricao">Descrição</label>
+                        <input type="text" class="form-control" name="descricao" required size="30" maxlength="100" usuario >
                     </div>
                     <button type="submit" class="btn btn-primary">Enviar</button>
                 </form>

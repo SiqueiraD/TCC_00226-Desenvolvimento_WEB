@@ -23,6 +23,8 @@ public class ContaController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        request.setAttribute("nomeUsuario", "Leo Cruz"); 
         RequestDispatcher rd = request.getRequestDispatcher("Conta.jsp");
         rd.forward(request, response);
     }
