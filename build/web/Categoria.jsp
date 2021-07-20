@@ -11,7 +11,7 @@
         <%@include file="Cabecalho.html" %>
     </head>
     <body>
-        <div class="container mt-2">
+        <div class="container mt-3 container-bg-gray p-5">
 
             <jsp:include page="MenuNavbar.html" />
 
