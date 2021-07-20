@@ -1,11 +1,18 @@
-<%@page contentType="text/html" pageEncoding="UTF-8" %>
+<%-- 
+    Document   : Administrador
+    Created on : 19/07/2021, 22:26:09
+    Author     : re92492
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <%@include file="Cabecalho.html" %>
     </head>
+    
     <body>
-
+        
 
         <div class="container mt-2">
 
@@ -29,25 +36,17 @@
 
                     <div class="form-group">
                         <label for="nome">Nome</label>
-                        <input type="text" class="form-control" name="nome" required size="30" maxlength="100" placeholder="Seu nome">
+                        <input type="text" class="form-control" name="nome" required size="30" maxlength="100" placeholder="Seu Nome">
                     </div>
                     <div class="form-group">
                         <label for="login">CPF</label>
-                        <input type="text" class="form-control" name="login" required size="30" maxlength="100" placeholder="Seu CPF">
+                        <input type="text" class="form-control" name="login" required size="30" maxlength="100" placeholder="Seu cpf">
                     </div>
                     <div class="form-group">
                         <label for="senha">Senha</label>
-                        <input type="password" class="form-control"  name="senha" required size="3" maxlength="15" placeholder="Sua Senha">
+                        <input type="password" class="form-control"  name="senha" required size="3" maxlength="3" placeholder="Sua Senha">
                     </div>
-                    
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                          Suspenso
-                        </label>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary">Adicionar</button>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
                 </form>
             </div>
         </div>
