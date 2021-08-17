@@ -29,4 +29,6 @@ public class CategoriaController extends HttpServlet {
         RequestDispatcher rd = request.getRequestDispatcher("Categoria.jsp");
         rd.forward(request, response);
     }
+    
+    
 }

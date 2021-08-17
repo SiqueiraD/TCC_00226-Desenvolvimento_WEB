@@ -11,7 +11,9 @@
 
             <jsp:include page="MenuNavbar.html" />
 
-            <h4>Login</h4> 
+            <jsp:include page="AdministradorCadastro.html" />
+            
+            <h4>Usuario</h4> 
             <div class="col-6 mt-5">
 
                 <%

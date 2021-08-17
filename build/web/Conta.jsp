@@ -22,7 +22,7 @@
                             <%= mensagem%>
                         </div>
                 <%  }%>    
-                <form method="GET" action="ValidarLogin" name="fvalida" >
+                <form method="POST" action="Conta" name="fvalida" >
 
 
                     <input type="hidden" name="id" >

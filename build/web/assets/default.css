@@ -11,3 +11,7 @@ and open the template in the editor.
 .container-bg-gray {
     background-color:gray;
 }
+
+body{
+    margin-top: 4em;
+}
