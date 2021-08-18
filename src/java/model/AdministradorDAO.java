@@ -83,6 +83,7 @@ public class AdministradorDAO extends HttpServlet {
                 administrador.setId(rs.getInt("id"));
                 administrador.setNome( rs.getString("nome") );
                 administrador.setCpf( rs.getString("cpf") );
+                administrador.setSenha( rs.getString("senha") );
             }
             
         } catch( SQLException e ) {

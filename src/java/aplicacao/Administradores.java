@@ -18,6 +18,7 @@ public class Administradores {
     private String senha;
 
     public Administradores() {
+        this.id = 0;
     }
 
     public Administradores(Integer id) {
@@ -62,6 +63,5 @@ public class Administradores {
     public void setSenha(String senha) {
         this.senha = senha;
     }
-
     
 }

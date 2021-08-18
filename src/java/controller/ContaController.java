@@ -23,24 +23,24 @@ public class ContaController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        request.setAttribute("nomeUsuario", "Leo Cruz"); 
+
+        request.setAttribute("nomeUsuario", "Leo Cruz");
         RequestDispatcher rd = request.getRequestDispatcher("Conta.jsp");
         rd.forward(request, response);
     }
-    
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         request.setCharacterEncoding("UTF-8");
         String mensagem;
-        
+
         try {
-            
-        mensagem = (String) request.getParameter("banco"); 
-        RequestDispatcher rd = request.getRequestDispatcher("Conta.jsp");
-        rd.forward(request, response);
+
+            mensagem = (String) request.getParameter("banco");
+            RequestDispatcher rd = request.getRequestDispatcher("Conta.jsp");
+            rd.forward(request, response);
 
         } catch (IOException | ServletException e) {
             mensagem = "Erro ao gravar usuário!";
@@ -48,10 +48,10 @@ public class ContaController extends HttpServlet {
 //            RequestDispatcher rd = getServletContext().getRequestDispatcher("/Mensagem.jsp");
 //            rd.forward(request, response);
 
-        String  nome = (String) request.getAttribute("banco"); 
-        RequestDispatcher rd = request.getRequestDispatcher("Conta.jsp");
-        rd.forward(request, response);
+            String nome = (String) request.getAttribute("banco");
+            RequestDispatcher rd = request.getRequestDispatcher("Conta.jsp");
+            rd.forward(request, response);
         }
-        
+
     }
 }
