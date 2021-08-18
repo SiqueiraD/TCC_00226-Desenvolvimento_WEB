@@ -9,7 +9,11 @@ package controller;
  *
  * @author re92492
  */
+
+
+import aplicacao.Administradores;
 import java.io.IOException;
+import java.util.ArrayList;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,17 +21,34 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
 @WebServlet(name = "Categoria", urlPatterns = {"/Categoria"})
 public class CategoriaController extends HttpServlet {
-
+    
+    
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        CategoriaDAO = categoriadao = new CategoriaDAO();
+        
+        
+       ArrayList<Categorias> listaCat = categoriadao.getLista();
+       request.setAttribute("listaCat", listaCat); 
+       RequestDispatcher rd = request.getRequestDispatcher("Categoria.jsp");
+       rd.forward(request, response);
+        
+    }
+    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        if (ValidarLogin.verificaADM(request, response)) {
-            RequestDispatcher rd = request.getRequestDispatcher("Categoria.jsp");
-            rd.forward(request, response);
-        }
+            throws ServletException, IOException{
+        
+        CategoriaDAO = categoriadao = new CategoriaDAO();
 
+        RequestDispatcher rd = request.getRequestDispatcher("Categoria.jsp");
+        rd.forward(request, response);
+        
     }
-
+    
+    
 }
