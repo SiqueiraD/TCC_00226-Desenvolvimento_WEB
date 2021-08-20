@@ -1,9 +1,18 @@
+
+
+
+
+
+
+<%@page import="aplicacao.Usuarios"%>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
     <head>
         <%@include file="Cabecalho.html" %>
     </head>
+
     <body>
 
 
@@ -11,47 +20,54 @@
 
             <jsp:include page="MenuNavbar.html" />
 
-            <jsp:include page="AdministradorCadastro.html" />
-            
-            <h4>Usuario</h4> 
-            <div class="col-6 mt-5">
-
-                <%
-                    if (request.getAttribute("mensagem") != null) {
-                         String mensagem = (String) request.getAttribute("mensagem");
-                       %>
-                        <div class="alert alert-danger" role="alert">
-                            <%= mensagem%>
-                        </div>
-                <%  }%>    
-                <form method="GET" action="ValidarLogin" name="fvalida" >
-
-
-                    <input type="hidden" name="id" >
-
-                    <div class="form-group">
-                        <label for="nome">Nome</label>
-                        <input type="text" class="form-control" name="nome" required size="30" maxlength="100" placeholder="Seu nome">
-                    </div>
-                    <div class="form-group">
-                        <label for="login">CPF</label>
-                        <input type="text" class="form-control" name="login" required size="30" maxlength="100" placeholder="Seu CPF">
-                    </div>
-                    <div class="form-group">
-                        <label for="senha">Senha</label>
-                        <input type="password" class="form-control"  name="senha" required size="3" maxlength="15" placeholder="Sua Senha">
-                    </div>
-                    
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                          Suspenso
-                        </label>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary">Adicionar</button>
-                </form>
+            <%
+                if (request.getAttribute("mensagem") != null) {
+                    String mensagem = (String) request.getAttribute("mensagem");
+            %>
+            <div class="alert alert-danger" role="alert">
+                <%= mensagem%>
             </div>
+            <%  }%>  
+
+
+            <jsp:include page="UsuarioCadastro.jsp" />
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">NOME</th>
+                        <th scope="col">CPF</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%
+                        ArrayList<Usuarios> ListaUsuarios = (ArrayList<Usuarios>) request.getAttribute("listaUsuarios");
+                        for (int i = 0; i < ListaUsuarios.size(); i++) {
+                            Usuarios aux = ListaUsuarios.get(i);
+                    %>
+                    <tr>
+                        <th scope="row"><%=aux.getId()%></th>
+                        <td><%=aux.getNome()%></td> 
+                        <td><%=aux.getCpf()%></td> 
+                        <td> 
+                            <div>
+                                <a type="submit" class="btn btn-primary" href="Usuario?acao=editar&id=<%=aux.getId()%>">Editar</a>
+                                <% if (aux.getSuspenso().equals("N")) {%>
+                                <a type="submit"  class="btn btn-danger" href="Usuario?acao=desativar&id=<%=aux.getId()%>">Desativar</a>
+                                <% } else {%>
+                                <a type="submit"  class="btn btn-success" href="Usuario?acao=ativar&id=<%=aux.getId()%>">Ativar</a>
+                                <% }%>
+                            </div>
+                        </td>
+                    </tr>
+                    <%
+                        }
+                    %>
+                </tbody>
+            </table>
+
         </div>
 
         <%@include file="Scripts_basicos.html" %>

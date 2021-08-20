@@ -26,6 +26,7 @@ public class Usuarios {
     private Collection<Contas> contasCollection;
 
     public Usuarios() {
+        this.id = 0;
     }
 
     public Usuarios(Integer id) {
