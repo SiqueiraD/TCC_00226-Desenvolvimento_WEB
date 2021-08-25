@@ -14,7 +14,7 @@ import java.util.Collection;
 public class Categorias {
 
     private Integer id;
-    
+    //private String nome;
     private String descricao;
     
     private Collection<Lancamentos> lancamentosCollection;
@@ -38,7 +38,8 @@ public class Categorias {
     public void setId(Integer id) {
         this.id = id;
     }
-
+    // teria que colocar um get nome e um set nome?
+    
     public String getDescricao() {
         return descricao;
     }
@@ -46,7 +47,7 @@ public class Categorias {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-
+    
     public Collection<Lancamentos> getLancamentosCollection() {
         return lancamentosCollection;
     }
@@ -54,6 +55,6 @@ public class Categorias {
     public void setLancamentosCollection(Collection<Lancamentos> lancamentosCollection) {
         this.lancamentosCollection = lancamentosCollection;
     }
-
+    
     
 }
